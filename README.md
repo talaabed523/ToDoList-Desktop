@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📝 To-Do List Web App
 A smart and modern **To-Do List web application** built using **HTML, CSS, JavaScript, and Node.js**.  
 This project allows users to manage their daily tasks efficiently with an intuitive UI, persistent storage, and an AI-powered assistant.
@@ -46,3 +47,7 @@ node server.js
 5. Open `index.html` in your browser
 
 > ⚠️ The AI chatbot requires the Node.js server to be running locally.
+=======
+# ToDoList-Desktop
+A feature-rich desktop to-do list app built with Electron, Node.js, and AI-powered chatbot assistant.
+>>>>>>> 242d87d4fdaaff610821312f456d7d53ba3de774
