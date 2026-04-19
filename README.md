@@ -1,53 +1,55 @@
-<<<<<<< HEAD
-# 📝 To-Do List Web App
-A smart and modern **To-Do List web application** built using **HTML, CSS, JavaScript, and Node.js**.  
-This project allows users to manage their daily tasks efficiently with an intuitive UI, persistent storage, and an AI-powered assistant.
+# ✅ To Do List - Desktop App
+
+A feature-rich productivity desktop application built with **Electron**, **Node.js**, and **Express**. Manage your daily tasks efficiently with an integrated AI-powered chatbot assistant that understands your tasks and helps you plan and prioritize.
 
 ---
 
-## 🚀 Features
-- ➕ Add new tasks (click button or press Enter)
-- ✅ Mark tasks as completed
-- ✏️ Edit existing tasks
-- 🗑️ Delete tasks
-- ⭐ Star/important tasks with yellow border highlight
-- 💾 Tasks persist on page refresh using localStorage
-- 📊 Real-time task counters (Completed / Uncompleted)
-- 🔄 Reset button to clear all tasks
-- 🎉 Displays a message when all tasks are completed
-- 🤖 AI chatbot assistant powered by Groq (llama-3.3-70b)
-  - Aware of your current tasks and their status
-  - Helps prioritize, plan, and break down tasks
-  - Resizable chat window fixed to bottom right
-- 🎨 Modern dark-themed UI with smooth styling
+## ✨ Features
+- Add, edit, and delete tasks with a name and optional due date
+- Star important tasks — highlighted with a yellow border
+- Add subtasks to any task and track them individually
+- Set due dates with live countdown timers and color-coded urgency — 🟢 plenty of time, 🟡 under 3 days, 🔴 overdue
+- AI chatbot that has full awareness of your tasks, subtasks, deadlines, and completion status
+- Tasks are saved locally and restored automatically on next launch
+- Draggable subtask and deadline panels
+- Built-in How to Use guide
 
 ---
 
 ## 🛠️ Tech Stack
-- **HTML** – Structure of the application
-- **CSS** – Styling and layout (dark theme + responsive design)
-- **JavaScript** – Functionality and interactivity
-- **Node.js + Express** – Backend server for AI chatbot
-- **Groq API** – AI model (llama-3.3-70b) for the chatbot
-- **localStorage** – Persistent task storage
+| Technology | Purpose |
+|---|---|
+| Electron | Desktop app framework |
+| Node.js + Express | Local backend server |
+| HTML, CSS, JavaScript | Frontend UI |
+| Groq API (LLaMA 3.3-70b) | AI chatbot |
+| localStorage | Persistent task storage |
 
 ---
 
-## ⚙️ Setup & Installation
-1. Clone the repository
-2. Run `npm install`
-3. Create a `.env` file in the root folder:
-```
-GROQ_API_KEY=your-groq-api-key-here
-```
-4. Start the backend server:
-```
-node server.js
-```
-5. Open `index.html` in your browser
+## 🚀 How to Run
+Clone the repository, install dependencies, add your Groq API key in `server.js`, then run `npm start`.
 
-> ⚠️ The AI chatbot requires the Node.js server to be running locally.
-=======
-# ToDoList-Desktop
-A feature-rich desktop to-do list app built with Electron, Node.js, and AI-powered chatbot assistant.
->>>>>>> 242d87d4fdaaff610821312f456d7d53ba3de774
+Get a free Groq API key at [console.groq.com](https://console.groq.com)
+
+---
+
+## 📦 Download
+Download the latest installer from the [Releases](../../releases) page — no code setup required. Just install and run.
+
+---
+
+## 🔧 How It Works
+The app runs a local **Express server** in a separate child process alongside the Electron window. When you send a message to the chatbot, the frontend sends a request to `localhost:3000/chat`, which forwards it to the Groq API along with your full task list as context. The response is displayed in the chat window.
+
+---
+
+## 📁 Project Structure
+| File | Purpose |
+|---|---|
+| main.js | Electron main process — creates window, manages server |
+| server.js | Express backend — handles AI chatbot API calls |
+| index.html | Main UI structure |
+| script.js | Frontend logic — tasks, subtasks, deadlines, chat |
+| style.css | All styling |
+| package.json | Project config and dependencies |
