@@ -1,0 +1,590 @@
+.completed {
+    text-decoration: line-through;
+    color: #a1a1aa;
+    border: 1px solid #71717a;
+}
+
+body {
+    background: rgb(24,24,27);
+    background: radial-gradient(circle, #312e81 0%, #1e1b4b 55%, #0f172a 100%);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#todo-container {
+    background: #18181b;
+    width: 520px;
+    margin: 0;
+    border: 2px solid #6366f1;
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+}
+
+#todo-form {
+    display: flex;
+    gap: 10px;
+}
+
+#header {
+    margin: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#input-button {
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6366f1;
+    color: white;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#input-button:hover {
+    background-color: #818cf8;
+}
+
+.input-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #6366f1;
+    background: #a1a1aa ;
+    color: 18181b;
+    box-sizing: border-box;
+}
+
+.input-item::placeholder {
+    color: #4e4e58;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+li {
+    border: 1px solid #3f3f46;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    background: #27272a;
+    color: #e4e4e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-btn, .delete-btn {
+    color: #a5b4fc;
+    cursor: pointer;
+    margin: 3px 5px;
+    border: none;
+    padding: 3px 5px;
+    background: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #a1a1aa;
+    border: 1px solid #71717a;
+}
+
+#all-complete-message {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#reset-btn {
+    padding: 6px 16px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 0;
+}
+
+#reset-btn:hover {
+    background-color: #818cf8;
+}
+
+#calendar-btn {
+    padding: 6px 16px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#calendar-btn:hover {
+    background-color: #818cf8;
+}
+
+.important {
+    border: 1px solid #facc15;
+}
+
+.star-btn {
+    cursor: pointer;
+    margin: 3px 5px;
+    line-height: 1;
+}
+
+.star-btn, .subtask-btn {
+    cursor: pointer;
+}
+
+.task-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.task-left label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task-counters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #a1a1aa;
+}
+
+#chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+#chat-btn:hover {
+    background-color: #818cf8;
+}
+
+#chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 350px;
+    background: #27272a;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #6366f1;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    resize: both;
+    overflow: hidden;
+    min-width: 250px;
+    min-height: 300px;
+    max-width: 600px;
+    max-height: 600px;
+    position: fixed;
+}
+
+#chat-messages {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 60px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#chat-input-area {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.user-message {
+    background: #6366f1;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    align-self: flex-end;
+    max-width: 80%;
+}
+
+.ai-message {
+    background: #3f3f46;
+    color: #e4e4e7;
+    padding: 8px 12px;
+    border-radius: 8px;
+    align-self: flex-start;
+    max-width: 80%;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #6366f1;
+    background: #18181b;
+    color: white;
+}
+
+#chat-input-area button {
+    padding: 8px 12px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#subtask-panel {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% + 220px);
+    width: 280px;
+    height: 400px;
+    background: #18181b;
+    border: 2px solid #6366f1;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#subtask-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#subtask-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+#subtask-close {
+    cursor: pointer;
+    color: #a1a1aa;
+    font-size: 16px;
+}
+
+#subtask-close:hover {
+    color: white;
+}
+
+#subtask-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#subtask-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin: 0;
+}
+
+#subtask-list li label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.subtask-delete {
+    color: #a5b4fc;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 3px 5px;
+}
+
+.subtask-completed {
+    text-decoration: line-through;
+    color: #a1a1aa;
+}
+
+#subtask-input-area {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+#subtask-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #6366f1;
+    background: #27272a;
+    color: white;
+    font-size: 14px;
+}
+
+#subtask-input::placeholder {
+    color: #71717a;
+}
+
+#subtask-input-area button {
+    padding: 8px 12px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#subtask-input-area button:hover {
+    background-color: #818cf8;
+}
+
+#subtask-header {
+    cursor: grab;
+}
+
+#deadline-panel {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(50% + 220px);
+    width: 280px;
+    max-height: 500px;
+    background: #18181b;
+    border: 2px solid #6366f1;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#deadline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: grab;
+}
+
+#deadline-close {
+    cursor: pointer;
+    color: #a1a1aa;
+    font-size: 16px;
+}
+
+#deadline-close:hover {
+    color: white;
+}
+
+#countdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#countdown-list li {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid transparent;
+}
+
+.deadline-green {
+    background: #14532d33;
+    border-color: #22c55e !important;
+}
+
+.deadline-yellow {
+    background: #71390033;
+    border-color: #facc15 !important;
+}
+
+.deadline-red {
+    background: #7f1d1d33;
+    border-color: #ef4444 !important;
+}
+
+.deadline-task-name {
+    font-weight: bold;
+    color: #e4e4e7;
+}
+
+.deadline-countdown {
+    font-size: 12px;
+    color: #a1a1aa;
+}
+
+.inline-edit-input {
+    background: #3f3f46;
+    border: 1px solid #6366f1;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    padding: 2px 6px;
+    width: 120px;
+}
+
+.inline-edit-date {
+    background: #3f3f46;
+    border: 1px solid #6366f1;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-left: 5px;
+    width: 130px;
+}
+
+#help-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    background-color: #6366f1;
+    color: white;
+    border: 1px solid #6366f1;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#help-btn:hover {
+    background-color: #818cf8;
+}
+
+#help-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#help-modal {
+    background: #18181b;
+    border: 2px solid #6366f1;
+    border-radius: 15px;
+    padding: 25px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    color: white;
+}
+
+#help-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#help-header h2 {
+    margin: 0;
+    color: #a5b4fc;
+}
+
+#help-close {
+    cursor: pointer;
+    color: #a1a1aa;
+    font-size: 18px;
+}
+
+#help-close:hover {
+    color: white;
+}
+
+.help-section {
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+}
+
+.help-section h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #a5b4fc;
+}
+
+.help-section p {
+    margin: 0;
+    font-size: 14px;
+    color: #a1a1aa;
+    line-height: 1.5;
+}

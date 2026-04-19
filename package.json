@@ -1,0 +1,50 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "A to-do list desktop application",
+  "author": "Tala Abed",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talaabed523/ToDoList.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talaabed523/ToDoList/issues"
+  },
+  "homepage": "https://github.com/talaabed523/ToDoList#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./ToDoList_Icon"
+      },
+      "makers": [
+        { "name": "@electron-forge/maker-squirrel", "config": { "setupIcon": "./ToDoList_Icon.ico" } },
+        { "name": "@electron-forge/maker-zip" }
+      ]
+    }
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "electron-squirrel-startup": "^1.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.11.1",
+    "@electron-forge/maker-squirrel": "^7.11.1",
+    "@electron-forge/maker-zip": "^7.11.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.1",
+    "@electron-forge/plugin-fuses": "^7.11.1",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^41.2.1"
+  }
+}

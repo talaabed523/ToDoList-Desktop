@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>To-Do List</title>
+        <link rel = "stylesheet" href = "style.css"/>
+    </head>
+    <body>
+        <div id = "todo-container">
+            <div id = "header">
+                <h1>To Do List</h1>
+            </div>
+
+            <div id = "todo-form">
+                <input type="text" class="input-item" name="input_box" id="input-box" placeholder="Add Task">
+                <input type="date" id="due-date" class="input-item" style="width: 145px; flex: none;">
+                <button id="input-button" onclick="addTask()">Add</button>
+            </div>
+            
+            <div id="task-area">
+                <h2 id="task-title">Task List</h2>
+                <ul id="list-container"></ul>
+                <p id="all-complete-message" style="display: none; color: white;">
+                    Good job! All your tasks are completed!
+                </p>
+            </div>
+
+            <hr />
+            <div class="task-counters">
+                <button id="reset-btn" onclick="resetTasks()">Reset</button>
+                <span>Completed: <span id="completed-counter">0</span> | Uncompleted: <span id="uncompleted-counter">0</span></span>
+                <button id="calendar-btn" onclick="toggleCalendar()">Deadlines</button>
+            </div>
+        </div>
+
+        <div id = "subtask-panel" style = "display:none;">
+            <div id = "subtask-header">
+                <span id="subtask-title">Subtasks</span>
+                <span id="subtask-close" onclick="closeSubtasks()">✕</span>
+            </div>
+            <ul id="subtask-list"></ul>
+            <div id="subtask-input-area">
+                <input type="text" id="subtask-input" placeholder="Add subtask...">
+                <button onclick="addSubtask()">Add</button>
+            </div>
+        </div>
+
+        <button id = "chat-btn" onclick="toggleChat()">Ask AI</button>
+
+        <div id = "chat-window" style = "display:none;">
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask me anything...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div id="deadline-panel" style="display:none;">
+            <div id="deadline-header">
+                <span>⏳ Upcoming Deadlines</span>
+                <span id="deadline-close" onclick="toggleCalendar()">✕</span>
+            </div>
+            <ul id="countdown-list"></ul>
+        </div>
+        <button id="help-btn" onclick="toggleHelp()">How to Use</button>
+        <div id="help-overlay" style="display:none;">
+            <div id="help-modal">
+                <div id="help-header">
+                    <h2>How to Use</h2>
+                    <span id="help-close" onclick="toggleHelp()">✕</span>
+                </div>
+                <div id="help-content">
+                    <div class="help-section">
+                        <h3>Adding Tasks</h3>
+                        <p>Type your task in the input box and click <strong>Add</strong> or press <strong>Enter</strong>. Optionally pick a due date before adding.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Starring Tasks</h3>
+                        <p>Click the <strong>☆ star</strong> icon on any task to mark it as important. Starred tasks get a yellow border so they stand out.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Subtasks</h3>
+                        <p>Click the <strong>+</strong> icon on any task to open the subtasks panel. Add, complete, or delete subtasks for that task.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Editing Tasks</h3>
+                        <p>Click <strong>Edit</strong> on any task to change its name or due date inline. Press <strong>Enter</strong> or click away to save.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Deleting Tasks</h3>
+                        <p>Click <strong>Delete</strong> on any task to remove it. You will be asked to confirm before it's deleted.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Deadlines</h3>
+                        <p>Click <strong>Deadlines</strong> at the bottom to see all tasks with due dates and countdowns. Colors indicate urgency: 🟢 plenty of time, 🟡 less than 3 days, 🔴 overdue.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Reset</h3>
+                        <p>Click <strong>Reset</strong> to clear all tasks. This cannot be undone.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>Ask AI</h3>
+                        <p>Click <strong>Ask AI</strong> in the bottom right to open the chatbot. It knows your tasks, subtasks, deadlines and can help you prioritize or plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type = "text/javascript" src = "script.js"></script>
+        <script type = "text/javascript" src = "script.js"></script>
+    </body>
+</html>
