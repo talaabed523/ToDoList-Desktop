@@ -66,9 +66,3 @@ The app runs a local **Express server** in a separate child process alongside th
 | script.js | Frontend logic — tasks, subtasks, deadlines, chat |
 | style.css | All styling |
 | package.json | Project config and dependencies |
-
----
-
-## 👩‍💻 Author
-
-**Tala Abed** — [GitHub](https://github.com/talaabed523)
