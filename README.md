@@ -34,11 +34,6 @@ Get a free Groq API key at [console.groq.com](https://console.groq.com)
 
 ---
 
-## 📦 Download
-Download the latest installer from the [Releases](../../releases) page — no code setup required. Just install and run.
-
----
-
 ## 🔧 How It Works
 The app runs a local **Express server** in a separate child process alongside the Electron window. When you send a message to the chatbot, the frontend sends a request to `localhost:3000/chat`, which forwards it to the Groq API along with your full task list as context. The response is displayed in the chat window.
 
