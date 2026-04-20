@@ -4,8 +4,20 @@ A feature-rich productivity desktop application built with **Electron**, **Node.
 
 ---
 
+## 📸 Preview
+![To Do List Desktop App](Screenshot.png)
+
+---
+
+## ⬇️ Download
+Download the latest installer from the [Releases](../../releases) page — no code setup required. Just install and run!
+
+---
+
 ## ✨ Features
+
 - Add, edit, and delete tasks with a name and optional due date
+- Edit tasks inline — change name and due date without a popup
 - Star important tasks — highlighted with a yellow border
 - Add subtasks to any task and track them individually
 - Set due dates with live countdown timers and color-coded urgency — 🟢 plenty of time, 🟡 under 3 days, 🔴 overdue
@@ -17,6 +29,7 @@ A feature-rich productivity desktop application built with **Electron**, **Node.
 ---
 
 ## 🛠️ Tech Stack
+
 | Technology | Purpose |
 |---|---|
 | Electron | Desktop app framework |
@@ -28,18 +41,23 @@ A feature-rich productivity desktop application built with **Electron**, **Node.
 ---
 
 ## 🚀 How to Run
-Clone the repository, install dependencies, add your Groq API key in `server.js`, then run `npm start`.
 
-Get a free Groq API key at [console.groq.com](https://console.groq.com)
+1. Clone the repository
+2. Run `npm install`
+3. Get a free Groq API key at [console.groq.com](https://console.groq.com)
+4. Open `server.js` and replace `YOUR_GROQ_API_KEY_HERE` with your actual key
+5. Run `npm start`
 
 ---
 
 ## 🔧 How It Works
+
 The app runs a local **Express server** in a separate child process alongside the Electron window. When you send a message to the chatbot, the frontend sends a request to `localhost:3000/chat`, which forwards it to the Groq API along with your full task list as context. The response is displayed in the chat window.
 
 ---
 
 ## 📁 Project Structure
+
 | File | Purpose |
 |---|---|
 | main.js | Electron main process — creates window, manages server |
@@ -48,3 +66,9 @@ The app runs a local **Express server** in a separate child process alongside th
 | script.js | Frontend logic — tasks, subtasks, deadlines, chat |
 | style.css | All styling |
 | package.json | Project config and dependencies |
+
+---
+
+## 👩‍💻 Author
+
+**Tala Abed** — [GitHub](https://github.com/talaabed523)
